@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tastoria CMS — Categories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cms-style.css">
+</head>
+<body class="cms-page">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <span class="logo">Tastoria</span>
+            <span class="brand-tag">CMS</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">🍜</span> Cuisines
+            </a>
+            <a href="categories.html" class="nav-item active">
+                <span class="nav-icon">🏷️</span> Categories
+            </a>
+            <a href="add-staff.html" class="nav-item">
+                <span class="nav-icon">👤</span> Add Staff
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">A</div>
+                <div>
+                    <div class="user-name" id="sidebarUserName">Admin</div>
+                    <div class="user-role" id="sidebarUserRole">Admin</div>
+                </div>
+            </div>
+            <button class="btn-logout" id="logoutBtn">Logout</button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="cms-main">
+        <div class="cms-header">
+            <div>
+                <h1 class="cms-title">Categories</h1>
+                <p class="cms-subtitle">Manage cuisine categories</p>
+            </div>
+        </div>
+
+        <div id="alertBox" class="alert hidden"></div>
+
+        <div class="table-wrapper">
+            <table class="cms-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody id="categoryTableBody">
+                    <tr><td colspan="2" class="table-loading">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+</html>

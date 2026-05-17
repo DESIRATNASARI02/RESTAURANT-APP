@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tastoria CMS — Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cms-style.css">
+</head>
+<body class="auth-page">
+
+    <div class="auth-wrapper">
+        <!-- Left Panel -->
+        <div class="auth-left">
+            <div class="auth-brand">
+                <span class="logo">Tastoria</span>
+                <span class="brand-tag">CMS Dashboard</span>
+            </div>
+            <div class="auth-illustration">
+                <div class="circle-lg"></div>
+                <div class="circle-sm"></div>
+                <div class="illus-emoji">🍽️</div>
+            </div>
+            <p class="auth-quote">"Managing great food starts with a great system."</p>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="auth-right">
+            <div class="auth-form-wrapper">
+                <h2 class="auth-title">Welcome back</h2>
+                <p class="auth-subtitle">Sign in to your CMS account</p>
+
+                <div id="alertBox" class="alert hidden"></div>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="admin@tastoria.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required />
+                    </div>
+                    <button type="submit" class="btn-primary btn-full" id="loginBtn">
+                        Sign In
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

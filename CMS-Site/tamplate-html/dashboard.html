@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tastoria CMS — Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cms-style.css">
+</head>
+<body class="cms-page">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <span class="logo">Tastoria</span>
+            <span class="brand-tag">CMS</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item active">
+                <span class="nav-icon">🍜</span> Cuisines
+            </a>
+            <a href="categories.html" class="nav-item">
+                <span class="nav-icon">🏷️</span> Categories
+            </a>
+            <a href="add-staff.html" class="nav-item">
+                <span class="nav-icon">👤</span> Add Staff
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">A</div>
+                <div>
+                    <div class="user-name" id="sidebarUserName">Admin</div>
+                    <div class="user-role" id="sidebarUserRole">Admin</div>
+                </div>
+            </div>
+            <button class="btn-logout" id="logoutBtn">Logout</button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="cms-main">
+        <div class="cms-header">
+            <div>
+                <h1 class="cms-title">Cuisines</h1>
+                <p class="cms-subtitle">Manage all your restaurant cuisines</p>
+            </div>
+            <button class="btn-primary" id="addCuisineBtn">+ Add Cuisine</button>
+        </div>
+
+        <div id="alertBox" class="alert hidden"></div>
+
+        <div class="table-wrapper">
+            <table class="cms-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Author</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="cuisineTableBody">
+                    
+                    <tr><td colspan="7" class="table-loading">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div id="cuisineModal" class="modal-overlay hidden">
+        <div class="modal">
+           <div class="modal-header">
+                <h3 id="modalTitle">Add Cuisine</h3>
+                <button class="modal-close" id="closeModal">✕</button>
+            </div>
+            <div id="modalAlertBox" class="alert hidden" style="margin: 0 24px"></div>
+            <form id="cuisineForm">
+                <input type="hidden" id="cuisineId" />
+                <div class="form-group">
+                    <label for="cuisineName">Name</label>
+                    <input type="text" id="cuisineName" placeholder="e.g. Sushi Roll" required />
+                </div>
+                <div class="form-group">
+                    <label for="cuisineDesc">Description</label>
+                    <textarea id="cuisineDesc" rows="3" placeholder="Describe the cuisine..." required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cuisinePrice">Price (IDR)</label>
+                        <input type="number" id="cuisinePrice" placeholder="e.g. 85000" min="1" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="cuisineCategory">Category</label>
+                        <select id="cuisineCategory" required>
+                            <option value="">Select category</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cuisineImgUrl">Image URL</label>
+                    <input type="text" id="cuisineImgUrl" placeholder="https://..." />
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="cancelModal">Cancel</button>
+                    <button type="submit" class="btn-primary" id="submitCuisine">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="uploadModal" class="modal-overlay hidden">
+        <div class="modal modal-sm">
+            <div class="modal-header">
+                <h3>Upload Image</h3>
+                <button class="modal-close" id="closeUploadModal">✕</button>
+            </div>
+            <div class="form-group">
+                <label>Select Image File</label>
+                <input type="file" id="imageFile" accept="image/*" />
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn-secondary" id="cancelUpload">Cancel</button>
+                <button type="button" class="btn-primary" id="submitUpload">Upload</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
